@@ -6,7 +6,9 @@ import {View,
         TouchableWithoutFeedback,
         Keyboard,
         Alert} from 'react-native'
+
 import Card from '../components/Card'
+import NumberContainer from '../components/NumberContainer'
 
 import Colors from '../constants/colors'
 import Input from '../components/Input'
@@ -35,12 +37,16 @@ export default function StartGameScreen(props){
     setConfirmed(true)
     setEnteredValue('')
     setSelectedNumber(chosenNum)
+    Keyboard.dismiss()
   }
 
   let confirmedOutput;
 
   if(confirmed){
-    confirmedOutput = <Text>Chosen Number: {selectedNumber}</Text>
+    confirmedOutput = <Card styles={styles.summaryContainer}>
+      <Text>You Selected: </Text>
+      <NumberContainer>{selectedNumber}</NumberContainer>
+    </Card>
   }
   return(
     <TouchableWithoutFeedback onPress={()=>{
@@ -99,5 +105,9 @@ const styles = StyleSheet.create({
   input: {
     width: 50,
     textAlign: 'center',
+  },
+  summaryContainer: {
+    marginTop: 40,
+    alignItems: 'center'
   }
 })
