@@ -46,6 +46,7 @@ export default function StartGameScreen(props){
     confirmedOutput = <Card styles={styles.summaryContainer}>
       <Text>You Selected: </Text>
       <NumberContainer>{selectedNumber}</NumberContainer>
+      <Button title="START GAME" onPress={()=> props.onStartGame(selectedNumber)}/>
     </Card>
   }
   return(
