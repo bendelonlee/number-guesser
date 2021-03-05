@@ -41,9 +41,9 @@ export default function GameScreen(props){
             return;
         }
         if(direction === 'lower') {
-            currentMax.current = currentGuess - 1
+            currentMax.current = currentGuess
         } else {
-            currentMin.current = currentGuess
+            currentMin.current = currentGuess + 1
         }
         rounds.current += 1
         const nextNumber = generateRandomBetween(currentMin.current, currentMax.current)
