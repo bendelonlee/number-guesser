@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     marginVertical: 10,
+    fontFamily: 'maven-bold'
   },
   buttonContainer: {
     flexDirection: 'row',
