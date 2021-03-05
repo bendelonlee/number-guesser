@@ -10,8 +10,8 @@ import GameOverScreen from './screens/GameOverScreen';
 
 function fetchFonts(){
   return Font.loadAsync({
-    'maven-medium': require('./assets/fonts/MavenProMedium.ttf'),
     'maven-bold': require('./assets/fonts/MavenProBold.ttf'),
+    'maven-medium': require('./assets/fonts/MavenProMedium.ttf'),
   });
 }
 
@@ -21,12 +21,11 @@ export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false)
   
   if(!dataLoaded){
-    console.log('data loading');
-    
-
-    return <AppLoading startAsync={fetchFonts}
+    return (
+      <AppLoading startAsync={fetchFonts}
                        onError={(err)=>{console.log(err)}}
                        onFinish={()=>{setDataLoaded(true)}}/>
+    )
   }
   
   function configureNewGame(){

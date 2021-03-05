@@ -10,6 +10,8 @@ import {View,
 import Card from '../components/Card'
 import NumberContainer from '../components/NumberContainer'
 
+import globalStyle from '../constants/globalStyles'
+
 import Colors from '../constants/colors'
 import Input from '../components/Input'
 
@@ -54,7 +56,7 @@ export default function StartGameScreen(props){
         Keyboard.dismiss()
       }}>
       <View style={styles.screen}>
-        <Text style={styles.title}>Start a New Game</Text>
+        <Text style={{...globalStyle.title, ...styles.title}}>Start a New Game</Text>
         <Card styles={styles.inputContainer}>
           <Text>Select a Number</Text>
           <Input styles={styles.input} 
